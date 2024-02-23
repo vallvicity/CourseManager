@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +28,12 @@
             </li>
         </ul>
     </div>
+    <div>
+        <p class="text-white nav-link disabled" th:inline="text">Hello <span th:remove="tag" sec:authentication="name">thymeleaf</span>!</p>
+    </div>
+    <form th:action="@{/login}">
+        <input class="btn btn-primary" type="submit" value="Login"/>
+    </form>
 </nav>
 
 

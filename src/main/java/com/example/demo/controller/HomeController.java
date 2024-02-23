@@ -28,6 +28,7 @@ public class HomeController {
     @RequestMapping("/")
     public String homepage(Model model) {
         model.addAttribute("courses", courseService.getAllCourses());
+//        model.addAttribute("user", )
         return "home";
     }
 

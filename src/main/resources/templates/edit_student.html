@@ -36,12 +36,8 @@
             <div class="card-body">
                 <form th:action="@{/students/{id} (id=${student.id})}" th:object="${student}" method="POST">
                     <div class="form-group">
-                        <label>Student First Name</label>
-                        <input type="text" name="firstName" th:field="*{firstName}" class="form-control" placeholder="Enter student first name"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Student Last Name</label>
-                        <input type="text" name="lastName" th:field="*{lastName}" class="form-control" placeholder="Enter student last name"/>
+                        <label>Student Name</label>
+                        <input type="text" name="name" th:field="*{name}" class="form-control" placeholder="Enter student name"/>
                     </div>
                     <div class="form-group">
                         <label>Student Email</label>
@@ -50,7 +46,7 @@
 
                     <div class="form-group">
                         <label>Student Number of Credits</label>
-                        <input type="text" name="number_credits" th:field="*{number_credits}" class="form-control" placeholder="Enter the number of credits"/>
+                        <input type="text" name="number_credits" th:field="*{numberOfCredits}" class="form-control" placeholder="Enter the number of credits"/>
                     </div>
 
                     <div class="box-footer">
