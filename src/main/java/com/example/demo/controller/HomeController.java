@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.UserEntity;
-import com.example.demo.repository.CourseRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +49,11 @@ public class HomeController {
         userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
         userRepository.save(userEntity);
         return "home";
+    }
+
+    @GetMapping("/access_denied")
+    public String accessDenied() {
+        return "access_denied";
     }
 
 }

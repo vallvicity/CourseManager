@@ -28,6 +28,8 @@ public class SecurityConfig {
                         .requestMatchers("/", "/users", "/users/new").permitAll()
                         .anyRequest().authenticated()
                 )
+                .exceptionHandling(configurer ->
+                        configurer.accessDeniedPage("/access_denied"))
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .permitAll()
