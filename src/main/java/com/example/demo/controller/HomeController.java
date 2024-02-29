@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.entity.UserEntity;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.CourseService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -35,6 +36,14 @@ public class HomeController {
     public String loginPage(Model model) {
         model.addAttribute("user", user);
         return "login";
+    }
+
+    @GetMapping("/default")
+    public String successPage(HttpServletRequest request) {
+        if (request.isUserInRole("ADMIN")) {
+            return "redirect:/courses";
+        }
+        return "redirect:/students";
     }
 
     @GetMapping("/users/new")

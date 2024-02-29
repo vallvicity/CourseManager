@@ -32,8 +32,10 @@ public class SecurityConfig {
                         configurer.accessDeniedPage("/access_denied"))
                 .formLogin((form) -> form
                         .loginPage("/login")
+                        .defaultSuccessUrl("/default", true)
                         .permitAll()
                 )
+
                 .logout((logout) -> logout.permitAll());
 
         return http.build();
